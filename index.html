@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>DEEPSPACE (DPS) Test Ship Stats Client</title>
+<meta http-equiv="Pragma" content="no-cache">
+<base target="_blank">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET', "https://test-api.deepspace.game/stats");
+	xhr.send();
+
+	var respond;
+	var lastUpdated = "";
+  var shipLevel1 = "";
+  var shipLevel2 = "";
+  var shipLevel3 = "";
+  var shipLevel4 = "";
+  var shipLevel5 = "";
+  var shipLevel6 = "";
+  var totalShips = "";
+	
+	largeFormat = d3.format(",.0f");
+	largeFormatDecimal = d3.format(",.2f");
+	largeFormatPercentage = d3.format(",.4f");
+	
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState === 4) {
+		  var data = xhr.response;
+		  tokenData = JSON.parse(data);
+		  console.log(tokenData);
+						
+		  shipLevel1 = tokenData["ship_level_1_minted"];
+		  document.getElementById('shipLevel1').innerHTML = "Ship Level 1 Mints: " + largeFormat(shipLevel1);
+      
+		  shipLevel2 = tokenData["ship_level_2_minted"];
+		  document.getElementById('shipLevel2').innerHTML = "Ship Level 2 Mints: " + largeFormat(shipLevel2);
+      
+  		shipLevel3 = tokenData["ship_level_3_minted"];
+		  document.getElementById('shipLevel3').innerHTML = "Ship Level 3 Mints: " + largeFormat(shipLeve3);
+      
+  		shipLevel4 = tokenData["ship_level_4_minted"];
+		  document.getElementById('shipLevel4').innerHTML = "Ship Level 4 Mints: " + largeFormat(shipLevel4);
+      
+  	  shipLevel5 = tokenData["ship_level_5_minted"];
+		  document.getElementById('shipLevel5').innerHTML = "Ship Level 5 Mints: " + largeFormat(shipLevel5);
+      
+  		shipLevel6 = tokenData["ship_level_6_minted"];
+		  document.getElementById('shipLevel6').innerHTML = "Ship Level 6 Mints: " + largeFormat(shipLevel6);
+      
+  		totalShips = tokenData["total_ships_minted"];
+		  document.getElementById('totalShips').innerHTML = "Total Ship Mints: " + largeFormat(totalShips);
+      
+		  lastUpdated = tokenData["last_updated"];
+		  document.getElementById('lastUpdated').innerHTML = "Last Updated: " + lastUpdated;
+
+		}
+	}
+</script>
+</head>
+<body>
+<h1>DEEPSPACE (DPS) Test Ships Client Stats</h1>
+<h2>About DEEPSPACE</h2>
+<p><b>Welcome to the DEEPSPACE Metaverse!</b><br/>
+DEEPSPACE is a Play-to-Earn space multiverse exploration strategy game!<br/>
+Earn passive income from holding $DPS, trading NFTs, and taking risks as you explore DEEPSPACE with your fleet of ships!<br/>
+Prepare to explore, harvest, and fight your way through the DEEPSPACE universe!<br/>
+Learn more at: <a href="https://deepspace.game">https://deepspace.game</a><br/>
+Buy DEEPSPACE (DPS) at: <a href="https://app.deepspace.game">https://app.deepspace.game</a>
+</p>
+	
+<p><i>Tip: Check the console log for the full JSON response from the token stat server</i></p>
+<p>Pro Tip: DEEPSPACE (DPS) Test Ships API Endpoint: <a href=""https://test-api.deepspace.game/stats">"https://test-api.deepspace.game/stats</a></p>
+<br/>
+<br><div id="shipLevel1">Ship Level 1 Mints: N/A</div>
+<br><div id="shipLevel2">Ship Level 2 Mints: N/A</div>
+<br><div id="shipLevel3">Ship Level 3 Mints: N/A</div>
+<br><div id="shipLevel4">Ship Level 4 Mints: N/A</div>
+<br><div id="shipLevel5">Ship Level 5 Mints: N/A</div>
+<br><div id="shipLevel6">Ship Level 6 Mints: N/A</div>
+<br><div id="totalShips">Total Ship Mints: N/A</div>
+<br><div id="lastUpdated">Last Updated: N/A</div>
+</body>
+</html>
