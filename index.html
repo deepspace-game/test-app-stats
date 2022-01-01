@@ -16,7 +16,6 @@
   var shipLevel3 = "";
   var shipLevel4 = "";
   var shipLevel5 = "";
-  var shipLevel6 = "";
   var totalShips = "";
 	var totalPlayers = "";
 	
@@ -44,9 +43,6 @@
       
   	  shipLevel5 = tokenData["ship_level_5_minted"];
 		  document.getElementById('shipLevel5').innerHTML = "Ship Level 5 Mints: " + largeFormat(shipLevel5);
-      
-  		shipLevel6 = tokenData["ship_level_6_minted"];
-		  document.getElementById('shipLevel6').innerHTML = "Ship Level 6 Mints: " + largeFormat(shipLevel6);
       
   		totalShips = tokenData["total_ships_minted"];
 		  document.getElementById('totalShips').innerHTML = "Total Ship Mints: " + largeFormat(totalShips);
@@ -80,7 +76,6 @@ Buy DEEPSPACE (DPS) at: <a href="https://app.deepspace.game">https://app.deepspa
 <br><div id="shipLevel3">Ship Level 3 Mints: N/A</div>
 <br><div id="shipLevel4">Ship Level 4 Mints: N/A</div>
 <br><div id="shipLevel5">Ship Level 5 Mints: N/A</div>
-<br><div id="shipLevel6">Ship Level 6 Mints: N/A</div>
 <br><div id="totalShips">Total Ship Mints: N/A</div>
 <br><div id="totalPlayers">Total Whitelisted Players: N/A</div>
 <br><div id="lastUpdated">Last Updated: N/A</div>
