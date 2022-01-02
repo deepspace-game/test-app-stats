@@ -58,23 +58,21 @@
   // creates a <table> element and a <tbody> element
   var tbl = document.createElement("table");
   var tblBody = document.createElement("tbody");
-		  
+  var y = 0;
 		  for (let i = 0; i < topMintersList.length; i++) {
+		  y++;
 		  	minterId = topMintersList[i]["minter_id"];
 		  	numMinted = topMintersList[i]["num_minted"];
 			walletLink = "https://bscscan.com/token/0xf275e1AC303a4C9D987a2c48b8E555A77FeC3F1C?a=";
-			 
-			document.getElementById('topMintersList').innerHTML += "<tr>";
-			document.getElementById('topMintersList').innerHTML += "<td>Wallet Address: <a href=\"" + walletLink + minterId + "\">" + minterId + "</a></td>";
-			document.getElementById('topMintersList').innerHTML += "<td>Number of Minted Ships: " + numMinted + "</td>";
-			document.getElementById('topMintersList').innerHTML += "</tr>";
-			
+			 			
     // creates a table row
     var row = document.createElement("tr");
     var cell = document.createElement("td");
-      var cellText = document.createTextNode("Wallet Address: <a href=\"" + walletLink + minterId + "\">" + minterId + "</a>");
+      var cellText = document.createTextNode(y);
       cell.appendChild(cellText);
-      cellText = document.createTextNode("Number of Minted Ships: " + numMinted);
+      cellText = document.createTextNode("<a href=\"" + walletLink + minterId + "\">" + minterId + "</a>");
+      cell.appendChild(cellText);
+      cellText = document.createTextNode(numMinted);
       cell.appendChild(cellText);
       row.appendChild(cell);
     }
