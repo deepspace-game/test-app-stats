@@ -63,10 +63,8 @@
     var cell = document.createElement("td");
     var cellText = document.createTextNode("Position:");
       cell.appendChild(cellText);
-	  row.appendChild(cell);
       cellText = document.createTextNode("Wallet Address:");
       cell.appendChild(cellText);
-	  row.appendChild(cell);
       cellText = document.createTextNode("Total Ship Mints:");
       cell.appendChild(cellText);
       row.appendChild(cell);
@@ -86,10 +84,8 @@
     cell = document.createElement("td");
     cellText = document.createTextNode(y);
       cell.appendChild(cellText);
-	  row.appendChild(cell);
       cellText = document.createTextNode("<a href=\"" + walletLink + minterId + "\">" + minterId + "</a>");
       cell.appendChild(cellText);
-	  row.appendChild(cell);
       cellText = document.createTextNode(numMinted);
       cell.appendChild(cellText);
       row.appendChild(cell);
