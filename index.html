@@ -58,12 +58,6 @@
   // creates a <table> element and a <tbody> element
   var tbl = document.createElement("table");
   var tblBody = document.createElement("tbody");
-
-  // creating all cells
-  for (var i = 0; i < 2; i++) {
-
-  }
-
 		  
 		  for (let i = 0; i < topMintersList.length; i++) {
 		  	minterId = topMintersList[i]["minter_id"];
@@ -87,8 +81,6 @@
 
     // add the row to the end of the table body
     tblBody.appendChild(row);
-			
-		  }
 		
   // put the <tbody> in the <table>
   tbl.appendChild(tblBody);
