@@ -47,22 +47,23 @@
       
   		totalShips = tokenData["total_ships_minted"];
 		  document.getElementById('totalShips').innerHTML = "Total Ship Mints: " + largeFormat(totalShips);
-			
+
   		totalPlayers = tokenData["total_whitelisted_players"];
 		  document.getElementById('totalPlayers').innerHTML = "Total Whitelisted Players: " + largeFormat(totalPlayers);
 			
 		  topMintersList = tokenData["top_minters"];
 		  document.getElementById('topMintersList').innerHTML = "Top " + topMintersList.length +  " Minters:<br>";
-		  		  
-		  document.getElementById('topMintersList').innerHTML += "<table>";
-		  document.getElementById('topMintersList').innerHTML += "<thead>";
-		  document.getElementById('topMintersList').innerHTML += "<tr>";
-		  document.getElementById('topMintersList').innerHTML += "<th>Minter ID:</th>";
-		  document.getElementById('topMintersList').innerHTML += "<th>Total Minted Ships:</th>";
-		  document.getElementById('topMintersList').innerHTML += "</tr>";
-			document.getElementById('topMintersList').innerHTML += "</thead>";
-		  
-document.getElementById('topMintersList').innerHTML += "<tbody>";
+
+
+  // creates a <table> element and a <tbody> element
+  var tbl = document.createElement("table");
+  var tblBody = document.createElement("tbody");
+
+  // creating all cells
+  for (var i = 0; i < 2; i++) {
+
+  }
+
 		  
 		  for (let i = 0; i < topMintersList.length; i++) {
 		  	minterId = topMintersList[i]["minter_id"];
@@ -73,10 +74,28 @@ document.getElementById('topMintersList').innerHTML += "<tbody>";
 			document.getElementById('topMintersList').innerHTML += "<td>Wallet Address: <a href=\"" + walletLink + minterId + "\">" + minterId + "</a></td>";
 			document.getElementById('topMintersList').innerHTML += "<td>Number of Minted Ships: " + numMinted + "</td>";
 			document.getElementById('topMintersList').innerHTML += "</tr>";
+			
+    // creates a table row
+    var row = document.createElement("tr");
+    var cell = document.createElement("td");
+      var cellText = document.createTextNode("Wallet Address: <a href=\"" + walletLink + minterId + "\">" + minterId + "</a>");
+      cell.appendChild(cellText);
+      cellText = document.createTextNode("Number of Minted Ships: " + numMinted);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+    }
+
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+			
 		  }
 		
-document.getElementById('topMintersList').innerHTML += "</tbody>";
-		document.getElementById('topMintersList').innerHTML += "</table>";
+  // put the <tbody> in the <table>
+  tbl.appendChild(tblBody);
+  // appends <table> into <body>
+  document.getElementById('topMintersList').appendChild(tbl);
+  // sets the border attribute of tbl to 2;
+  tbl.setAttribute("border", "2");
 		
 		  lastUpdated = tokenData["last_updated"];
 		  document.getElementById('lastUpdated').innerHTML = "Last Updated: " + lastUpdated;
