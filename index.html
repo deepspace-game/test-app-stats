@@ -58,6 +58,22 @@
   // creates a <table> element and a <tbody> element
   var tbl = document.createElement("table");
   var tblBody = document.createElement("tbody");
+  
+    var row = document.createElement("tr");
+    var cell = document.createElement("td");
+    var cellText = document.createTextNode("Position:");
+      cell.appendChild(cellText);
+	  row.appendChild(cell);
+      cellText = document.createTextNode("Wallet Address:");
+      cell.appendChild(cellText);
+	  row.appendChild(cell);
+      cellText = document.createTextNode("Total Ship Mints:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+  
   var y = 0;
 		  for (let i = 0; i < topMintersList.length; i++) {
 		  y++;
@@ -66,9 +82,9 @@
 			walletLink = "https://bscscan.com/token/0xf275e1AC303a4C9D987a2c48b8E555A77FeC3F1C?a=";
 			 			
     // creates a table row
-    var row = document.createElement("tr");
-    var cell = document.createElement("td");
-      var cellText = document.createTextNode(y);
+    row = document.createElement("tr");
+    cell = document.createElement("td");
+    cellText = document.createTextNode(y);
       cell.appendChild(cellText);
 	  row.appendChild(cell);
       cellText = document.createTextNode("<a href=\"" + walletLink + minterId + "\">" + minterId + "</a>");
@@ -77,10 +93,10 @@
       cellText = document.createTextNode(numMinted);
       cell.appendChild(cellText);
       row.appendChild(cell);
-    }
-
+	  
     // add the row to the end of the table body
     tblBody.appendChild(row);
+    }
 		
   // put the <tbody> in the <table>
   tbl.appendChild(tblBody);
