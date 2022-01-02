@@ -70,8 +70,10 @@
     var cell = document.createElement("td");
       var cellText = document.createTextNode(y);
       cell.appendChild(cellText);
-      cellText = document.createTextNode("<a href=\"" + walletLink + minterId + "\">" + minterId + "</a>");
+	  row.appendChild(cell);
+      cellText = document.createTextNode.innerHTML("<a href=\"" + walletLink + minterId + "\">" + minterId + "</a>");
       cell.appendChild(cellText);
+	  row.appendChild(cell);
       cellText = document.createTextNode(numMinted);
       cell.appendChild(cellText);
       row.appendChild(cell);
