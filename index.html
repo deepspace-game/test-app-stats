@@ -157,6 +157,16 @@ row.appendChild(cell);
 	cellText = document.createTextNode("Ship Total Stats:");
       cell.appendChild(cellText);
       row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Stat 0:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Stat 1:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
 	  
     // add the row to the end of the table body
     tblBody.appendChild(row);
@@ -168,6 +178,8 @@ row.appendChild(cell);
 		  	ownerId = topShipsList[i]["ship_owner_id"];
 			level = topShipsList[i]["ship_level"];
 			statsTotal = topShipsList[i]["ship_stats_total"];
+			shipStat0 = topShipsList[i]["ship_stats"]["ship_stats"][0];
+			shipStat1 = topShipsList[i]["ship_stats"]["ship_stats"][1];
 			 			
     // creates a table row
     row = document.createElement("tr");
@@ -193,6 +205,16 @@ row.appendChild(cell);
 			  
     cell = document.createElement("td");
       cellText = document.createTextNode(statsTotal);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipStat0);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipStat1);
       cell.appendChild(cellText);
       row.appendChild(cell);
 	  
