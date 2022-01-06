@@ -168,6 +168,36 @@ row.appendChild(cell);
       cell.appendChild(cellText);
       row.appendChild(cell);
 	  
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Stat 2:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Stat 3:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Stat 4:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Stat 5:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Stat 6:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Stat 7:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+						
     // add the row to the end of the table body
     tblBody.appendChild(row);
   
@@ -180,6 +210,12 @@ row.appendChild(cell);
 			statsTotal = topShipsList[i]["ship_stats_total"];
 			shipStat0 = topShipsList[i]["ship_stats"]["ship_stat_0"];
 			shipStat1 = topShipsList[i]["ship_stats"]["ship_stat_1"];
+			shipStat2 = topShipsList[i]["ship_stats"]["ship_stat_2"];
+			shipStat3 = topShipsList[i]["ship_stats"]["ship_stat_3"];
+			shipStat4 = topShipsList[i]["ship_stats"]["ship_stat_4"];
+			shipStat5 = topShipsList[i]["ship_stats"]["ship_stat_5];
+			shipStat6 = topShipsList[i]["ship_stats"]["ship_stat_6"];
+			shipStat7 = topShipsList[i]["ship_stats"]["ship_stat_7"];
 			 			
     // creates a table row
     row = document.createElement("tr");
@@ -217,7 +253,42 @@ row.appendChild(cell);
       cellText = document.createTextNode(shipStat1);
       cell.appendChild(cellText);
       row.appendChild(cell);
+		  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipStat2);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
 	  
+
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipStat3);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipStat4);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipStat5);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipStat6);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipStat7);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+			  
     // add the row to the end of the table body
     tblBody.appendChild(row);
     }
