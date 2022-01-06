@@ -17,6 +17,9 @@
   var shipLevel4 = "";
   var shipLevel5 = "";
   var totalShips = "";
+	var shipspecstats = "";
+	var shipstats100 = "";
+	var shipstats1 = "";
 	var totalPlayers = "";
 	var topMintersList = "";
 	
@@ -50,6 +53,12 @@
 
   		totalPlayers = tokenData["total_whitelisted_players"];
 		  document.getElementById('totalPlayers').innerHTML = "Total Whitelisted Players: " + largeFormat(totalPlayers);
+			
+ 		shipSpecsCounts = tokenData["ship_spec_stat_counts"];
+		shipwith100stat = shipSpecsCounts["ships_with_100_stat"];
+		shipwith1stat = shipSpecsCounts["ships_with_1_stat"];
+		 document.getElementById('shipSpecs100').innerHTML = "Ships with at least one stat as 100: " + largeFormat(shipwith100stat);
+		document.getElementById('shipSpecs1').innerHTML = "Ships with at least one stat as 1: " + largeFormat(shipwith1stat);
 			
 		  topMintersList = tokenData["top_minters"];
 		  document.getElementById('topMintersList').innerHTML = "Top " + topMintersList.length +  " Minters:<br>";
@@ -136,7 +145,10 @@ Buy DEEPSPACE (DPS) at: <a href="https://app.deepspace.game">https://app.deepspa
 <br><div id="shipLevel4">Ship Level 4 Mints: N/A</div>
 <br><div id="shipLevel5">Ship Level 5 Mints: N/A</div>
 <br><div id="totalShips">Total Ship Mints: N/A</div>
-<br><div id="totalPlayers">Total Whitelisted Players: N/A</div>
+<br/><br><div>Ship Specific Stats:</div>
+<br><div id="shipSpecs100">Ships with at least one stat as 100: N/A</div>
+<br><div id="shipSpecs1">Ships with at least one stat as 1: N/A</div>
+<br/><br><div id="totalPlayers">Total Whitelisted Players: N/A</div>
 <br><div id="topMintersList">Top Minters List: - N/A</div>
 <br><div id="lastUpdated">Last Updated: N/A</div>
 </body>
