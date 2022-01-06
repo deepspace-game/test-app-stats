@@ -22,6 +22,7 @@
 	var shipstats1 = "";
 	var totalPlayers = "";
 	var topMintersList = "";
+	var topShipsList = "";
 	
 	largeFormat = d3.format(",.0f");
 	largeFormatDecimal = d3.format(",.2f");
@@ -73,10 +74,12 @@
     var cellText = document.createTextNode("Position:");
       cell.appendChild(cellText);
 row.appendChild(cell);
+			
 	cell = document.createElement("td");
       cellText = document.createTextNode("Wallet Address:");
       cell.appendChild(cellText);
 row.appendChild(cell);
+			
     cell = document.createElement("td");    
 	cellText = document.createTextNode("Total Ship Mints:");
       cell.appendChild(cellText);
@@ -98,10 +101,12 @@ row.appendChild(cell);
     cellText = document.createTextNode(y);
       cell.appendChild(cellText);
 row.appendChild(cell);
+			  
     cell = document.createElement("td");
 	 cellText = document.createTextNode(minterId);
       cell.appendChild(cellText);
 row.appendChild(cell);
+			  
     cell = document.createElement("td");
       cellText = document.createTextNode(numMinted);
       cell.appendChild(cellText);
@@ -118,6 +123,91 @@ row.appendChild(cell);
   // sets the border attribute of tbl to 2;
   tbl.setAttribute("border", "2");
 		
+			
+		  topShipsList = tokenData["top_ships"];
+		  document.getElementById('topMintersList').innerHTML = "Top " + topShipsList.length +  " Ships:<br>";
+
+
+  // creates a <table> element and a <tbody> element
+  tbl = document.createElement("table");
+  tblBody = document.createElement("tbody");
+  
+    row = document.createElement("tr");
+    cell = document.createElement("td");
+    cellText = document.createTextNode("Position:");
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			
+	cell = document.createElement("td");
+      cellText = document.createTextNode("Ship Address:");
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Owner Address:");
+      cell.appendChild(cellText);
+      row.appendChild(cell
+		      
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Level:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Total Stats:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+  
+  var y = 0;
+		  for (let i = 0; i < topShipsList.length; i++) {
+		  y++;
+		  	shipId = topShipsList[i]["ship_id"];
+		  	ownerId = topShipsList[i]["ship_owner_id"];
+			level = topShipsList[i]["ship_level"];
+			statsTotal = topShipsList[i]["ship_stats_total"];
+			 			
+    // creates a table row
+    row = document.createElement("tr");
+    cell = document.createElement("td");
+    cellText = document.createTextNode(y);
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+	 cellText = document.createTextNode(shipId);
+      cell.appendChild(cellText);
+row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(ownerId);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(level);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(statsTotal);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+    }
+		
+  // put the <tbody> in the <table>
+  tbl.appendChild(tblBody);
+  // appends <table> into <body>
+  document.getElementById('topShipsList').appendChild(tbl);
+  // sets the border attribute of tbl to 2;
+  tbl.setAttribute("border", "2");
+			
+			
 		  lastUpdated = tokenData["last_updated"];
 		  document.getElementById('lastUpdated').innerHTML = "Last Updated: " + lastUpdated;
 
@@ -150,6 +240,7 @@ Buy DEEPSPACE (DPS) at: <a href="https://app.deepspace.game">https://app.deepspa
 <br><div id="shipSpecs1">Ships with at least one stat as 1: N/A</div>
 <br/><br><div id="totalPlayers">Total Whitelisted Players: N/A</div>
 <br><div id="topMintersList">Top Minters List: - N/A</div>
+<br><div id="topShipsList">Top Ships List: - N/A</div>
 <br><div id="lastUpdated">Last Updated: N/A</div>
 </body>
 </html>
