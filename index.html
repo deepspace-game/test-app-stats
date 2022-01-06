@@ -149,6 +149,11 @@ row.appendChild(cell);
       row.appendChild(cell);
 		      
     cell = document.createElement("td");    
+	cellText = document.createTextNode("Ship Class:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
 	cellText = document.createTextNode("Ship Level:");
       cell.appendChild(cellText);
       row.appendChild(cell);
@@ -207,6 +212,7 @@ row.appendChild(cell);
 		  	shipId = topShipsList[i]["ship_id"];
 		  	ownerId = topShipsList[i]["ship_owner_id"];
 			level = topShipsList[i]["ship_level"];
+		 	shipClass = topShipsList[i]["ship_class"];
 			statsTotal = topShipsList[i]["ship_stats_total"];
 			shipStat0 = topShipsList[i]["ship_stats"]["attack"];
 			shipStat1 = topShipsList[i]["ship_stats"]["special_attack"];
@@ -233,6 +239,12 @@ row.appendChild(cell);
       cellText = document.createTextNode(ownerId);
       cell.appendChild(cellText);
       row.appendChild(cell);
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipClass);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			  
 			  
     cell = document.createElement("td");
       cellText = document.createTextNode(level);
