@@ -169,20 +169,10 @@ row.appendChild(cell);
       row.appendChild(cell);
 			
     cell = document.createElement("td");    
-	cellText = document.createTextNode("Special Attack:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-	  
-    cell = document.createElement("td");    
 	cellText = document.createTextNode("Shields:");
       cell.appendChild(cellText);
       row.appendChild(cell);
-			
-    cell = document.createElement("td");    
-	cellText = document.createTextNode("Special Defense:");
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-			
+	  
     cell = document.createElement("td");    
 	cellText = document.createTextNode("Speed:");
       cell.appendChild(cellText);
@@ -199,7 +189,17 @@ row.appendChild(cell);
       row.appendChild(cell);
 			
     cell = document.createElement("td");    
-	cellText = document.createTextNode("Ship Stat 7:");
+	cellText = document.createTextNode("Special Attack:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Special Defense:");
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+			
+    cell = document.createElement("td");    
+	cellText = document.createTextNode("Max Health:");
       cell.appendChild(cellText);
       row.appendChild(cell);
 						
@@ -214,14 +214,14 @@ row.appendChild(cell);
 			level = topShipsList[i]["ship_level"];
 		 	shipClass = topShipsList[i]["ship_class"];
 			statsTotal = topShipsList[i]["ship_stats_total"];
-			shipStat0 = topShipsList[i]["ship_stats"]["attack"];
-			shipStat1 = topShipsList[i]["ship_stats"]["special_attack"];
-			shipStat2 = topShipsList[i]["ship_stats"]["shields"];
-			shipStat3 = topShipsList[i]["ship_stats"]["special_defense"];
-			shipStat4 = topShipsList[i]["ship_stats"]["speed"];
-			shipStat5 = topShipsList[i]["ship_stats"]["mining"];
-			shipStat6 = topShipsList[i]["ship_stats"]["luck"];
-			shipStat7 = topShipsList[i]["ship_stats"]["ship_stat_7"];
+			shipAttack = topShipsList[i]["ship_stats"]["attack"];
+			shipSpecialAttack = topShipsList[i]["ship_stats"]["special_attack"];
+			shipShields = topShipsList[i]["ship_stats"]["shields"];
+			shipSpecialDefense = topShipsList[i]["ship_stats"]["special_defense"];
+			shipSpeed = topShipsList[i]["ship_stats"]["speed"];
+			shipMining = topShipsList[i]["ship_stats"]["mining"];
+			shipLuck = topShipsList[i]["ship_stats"]["luck"];
+			shipMaxHealth = topShipsList[i]["ship_stats"]["max_health"];
 			 			
     // creates a table row
     row = document.createElement("tr");
@@ -257,46 +257,46 @@ row.appendChild(cell);
       row.appendChild(cell);
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipStat0);
+      cellText = document.createTextNode(shipAttack);
       cell.appendChild(cellText);
       row.appendChild(cell);
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipStat1);
+      cellText = document.createTextNode(shipShields);
       cell.appendChild(cellText);
       row.appendChild(cell);
 		  
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipStat2);
+      cellText = document.createTextNode(shipSpeed);
       cell.appendChild(cellText);
       row.appendChild(cell);
 	  
 
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipStat3);
+      cellText = document.createTextNode(shipMining);
       cell.appendChild(cellText);
       row.appendChild(cell);
 	  
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipStat4);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-	  
-			  
-    cell = document.createElement("td");
-      cellText = document.createTextNode(shipStat5);
+      cellText = document.createTextNode(shipLuck);
       cell.appendChild(cellText);
       row.appendChild(cell);
 	  
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipStat6);
+      cellText = document.createTextNode(shipSpecialAttack);
       cell.appendChild(cellText);
       row.appendChild(cell);
 	  
 			  
     cell = document.createElement("td");
-      cellText = document.createTextNode(shipStat7);
+      cellText = document.createTextNode(shipSpecialDefense);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+	  
+			  
+    cell = document.createElement("td");
+      cellText = document.createTextNode(shipMaxHealth);
       cell.appendChild(cellText);
       row.appendChild(cell);
 	  
