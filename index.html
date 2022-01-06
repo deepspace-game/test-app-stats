@@ -178,8 +178,8 @@ row.appendChild(cell);
 		  	ownerId = topShipsList[i]["ship_owner_id"];
 			level = topShipsList[i]["ship_level"];
 			statsTotal = topShipsList[i]["ship_stats_total"];
-			shipStat0 = topShipsList[i]["ship_stats"]["ship_stats"][0];
-			shipStat1 = topShipsList[i]["ship_stats"]["ship_stats"][1];
+			shipStat0 = topShipsList[i]["ship_stats"]["ship_stats"]["ship_stat_0"];
+			shipStat1 = topShipsList[i]["ship_stats"]["ship_stats"]["ship_stat_1"];
 			 			
     // creates a table row
     row = document.createElement("tr");
